@@ -163,13 +163,13 @@ int ListCtrl() {
 			}
 
 		case SUBMIT:
-			return y-12;
+			return y - 12;
 		}
 	}
 }
 
 // 콘솔 내 커서 이동 함수
-void gotoxy(x,y) {
+void gotoxy(x, y) {
 	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD pos;
 	pos.X = x;
@@ -180,7 +180,7 @@ void gotoxy(x,y) {
 // 파일 생성
 int Create_File(choice_file_num) {
 
-	gotoxy(50,2);
+	gotoxy(50, 2);
 	printf("─────────────────────────\n");
 	gotoxy(50, 3);
 	printf("파일 이름 입력 (.txt를 꼭 붙혀주세요.)\n");
@@ -193,7 +193,7 @@ int Create_File(choice_file_num) {
 	gotoxy(50, 5);
 	printf("─────────────────────────\n");
 	fp = fopen(fname, "w");
-	
+
 	gotoxy(50, 6);
 	printf("데이터를 입력해주세요.\n");
 	gotoxy(50, 7);
@@ -225,12 +225,12 @@ int Output_File(choice_file_num) {
 	gotoxy(50, 2);
 	printf("________________________________________________________");
 	gotoxy(50, 3);
-	printf("파일 %s의 내용입니다...",file_name[choice_file_num]);
+	printf("파일 %s의 내용입니다...", file_name[choice_file_num]);
 	gotoxy(50, 5);
 	printf("________________________________________________________");
 	gotoxy(50, 6);
 	printf("%s", str_read);
-	
+
 	gotoxy(50, 8);
 	printf("돌아갈려면 아무 키나 입력...");
 	_getch();
@@ -250,7 +250,7 @@ void main() {
 		titleDraw();
 		tipDraw();
 		int fileCode = ListCtrl();
-		
+
 		// 파일 선택 후, 해당 블록에서 사용할
 		// 기능 선택
 		gotoxy(2, 19);
